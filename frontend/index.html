@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MiniKanban</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div>
+            <h1>MiniKanban</h1>
+            <p>Simple task management for Think Ramen</p>
+        </div>
+
+        <button id="add-task-btn">
+            + Add Task
+        </button>
+    </header>
+
+    <main>
+        <section id="kanban-board" class="kanban-board">
+
+            <div class="column" data-status="BACKLOG">
+                <div class="column-header">
+                    <h2>Backlog</h2>
+                    <span id="count-BACKLOG">0</span>
+                </div>
+
+                <div
+                    id="BACKLOG"
+                    class="task-list">
+                </div>
+            </div>
+
+            <div class="column" data-status="TODO">
+                <div class="column-header">
+                    <h2>To Do</h2>
+                    <span id="count-TODO">0</span>
+                </div>
+
+                <div
+                    id="TODO"
+                    class="task-list">
+                </div>
+            </div>
+
+            <div class="column" data-status="IN_PROGRESS">
+                <div class="column-header">
+                    <h2>In Progress</h2>
+                    <span id="count-IN_PROGRESS">0</span>
+                </div>
+
+                <div
+                    id="IN_PROGRESS"
+                    class="task-list">
+                </div>
+            </div>
+
+            <div class="column" data-status="REVIEW">
+                <div class="column-header">
+                    <h2>Review</h2>
+                    <span id="count-REVIEW">0</span>
+                </div>
+
+                <div
+                    id="REVIEW"
+                    class="task-list">
+                </div>
+            </div>
+
+            <div class="column" data-status="DONE">
+                <div class="column-header">
+                    <h2>Done</h2>
+                    <span id="count-DONE">0</span>
+                </div>
+
+                <div
+                    id="DONE"
+                    class="task-list">
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <dialog id="task-dialog">
+        <form id="task-form">
+
+            <h2>Create Task</h2>
+
+            <label for="title">
+                Title
+            </label>
+
+            <input
+                id="title"
+                name="title"
+                type="text"
+                maxlength="100"
+                required
+            >
+
+            <label for="description">
+                Description
+            </label>
+
+            <textarea
+                id="description"
+                name="description"
+                rows="4"
+            ></textarea>
+
+            <label for="priority">
+                Priority
+            </label>
+
+            <select
+                id="priority"
+                name="priority">
+
+                <option value="low">
+                    Low
+                </option>
+
+                <option value="medium" selected>
+                    Medium
+                </option>
+
+                <option value="high">
+                    High
+                </option>
+
+            </select>
+
+            <div class="form-actions">
+                <button
+                    type="button"
+                    id="cancel-btn">
+                    Cancel
+                </button>
+
+                <button
+                    type="submit">
+                    Create Task
+                </button>
+            </div>
+
+        </form>
+    </dialog>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

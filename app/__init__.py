@@ -1,0 +1,1 @@
+"""MiniKanban application package."""

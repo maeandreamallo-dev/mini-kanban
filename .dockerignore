@@ -1,0 +1,9 @@
+.venv
+_pycache_
+*.pyc
+.pytest_cache
+.git
+.gitignore
+kanban.db
+tests
+README.md
